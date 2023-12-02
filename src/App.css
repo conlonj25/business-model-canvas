@@ -1,5 +1,10 @@
-.app-container {
+.stack{
+	flex-grow: 1;
 	display: flex;
-	align-items: stretch;
-	background-color: pink;
+	flex-direction: column;
+}
+
+.row {
+	flex-grow: 1;
+	display: flex;
 }
