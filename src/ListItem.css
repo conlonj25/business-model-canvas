@@ -1,0 +1,32 @@
+li {
+	margin: 0.25em 0;
+}
+
+input[type=text] {
+	margin: 0 0.25em;
+	padding: 0.25em 0;
+	border: none;
+	background-color: transparent;
+}
+input[type=text]:focus {
+	padding: 0.25em 0;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.remove-button {
+	border: none;
+	background-color: transparent;
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	color: transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.remove-button:hover {
+	color: black;
+	background-color: #A9A9A9;
+}

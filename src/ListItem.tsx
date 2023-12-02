@@ -1,3 +1,5 @@
+import './ListItem.css';
+
 type ListItemProps = {
 	ListItemIndex: number;
 	ListItemValue: string;
@@ -21,11 +23,12 @@ const ListItem = ({
 				}}
 			></input>
 			<button
+				className="remove-button"
 				onClick={() => {
 					removeListItem(ListItemIndex);
 				}}
 			>
-				-
+				X
 			</button>
 		</li>
 	);

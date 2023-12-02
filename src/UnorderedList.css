@@ -9,10 +9,10 @@ h3{
 	text-align: center;
 }
 
-ul {
+/* ul {
 	list-style-type: none;
 	padding: 0;
-}
+} */
 
 .button-align {
 	display: flex;
@@ -24,8 +24,8 @@ ul {
 	border: none;
 	border-radius: 50%;
 	box-shadow: 0 2px 4px darkslategray;
-	height: 3em;
-	width: 3em;
+	height: 2em;
+	width: 2em;
 	cursor: pointer;
 	transition: all 0.2s ease;
 }
