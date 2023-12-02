@@ -2,7 +2,11 @@ import './UnorderedList.css';
 import ListItem from './ListItem';
 import { useState } from 'react';
 
-const UnorderedList = () => {
+type UnorderedListProps = {
+	title: string;
+};
+
+const UnorderedList = ({ title }: UnorderedListProps) => {
 	const [list, setList] = useState<string[]>(['']);
 
 	const addListItem = () => {
@@ -22,7 +26,8 @@ const UnorderedList = () => {
 	};
 
 	return (
-		<>
+		<div className="unordered-list-container">
+			<h3>{title}</h3>
 			<ul>
 				{list.map((value, i) => (
 					<ListItem
@@ -33,14 +38,17 @@ const UnorderedList = () => {
 					/>
 				))}
 			</ul>
-			<button
-				onClick={() => {
-					addListItem();
-				}}
-			>
-				+
-			</button>
-		</>
+			<div className="button-align">
+				<button
+					className="add-button"
+					onClick={() => {
+						addListItem();
+					}}
+				>
+					+
+				</button>
+			</div>
+		</div>
 	);
 };
 

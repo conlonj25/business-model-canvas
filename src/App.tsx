@@ -5,7 +5,10 @@ const App = () => {
 	return (
 		<>
 			<h1>Business Model Canvas</h1>
-			<UnorderedList />
+			<div className="app-container">
+				<UnorderedList title={'Key Partners'} />
+				<UnorderedList title={'Key Partners'} />
+			</div>
 		</>
 	);
 };
