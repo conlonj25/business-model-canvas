@@ -7,3 +7,4 @@
 -   [ ] fix styling so listItems wrap text
 -   [ ] update styling to maximize space
 -   [ ] switch to display mode in window and edit mode in modal
+-   [ ] save state in local storage
