@@ -1,53 +1,21 @@
 import './UnorderedList.css';
-import ListItem from './ListItem';
-import { useState } from 'react';
+
+import { List } from './types';
 
 type UnorderedListProps = {
 	title: string;
+	list: List;
 };
 
-const UnorderedList = ({ title }: UnorderedListProps) => {
-	const [list, setList] = useState<string[]>(['']);
-
-	const addListItem = () => {
-		setList([...list, '']);
-	};
-
-	const removeListItem = (indexToRemove: number) => {
-		setList(list.filter((_, i) => i !== indexToRemove));
-	};
-
-	const updateListItem = (indexToUpdate: number, newValue: string) => {
-		setList(
-			list.map((oldValue, i) =>
-				indexToUpdate === i ? newValue : oldValue
-			)
-		);
-	};
-
+const UnorderedList = ({ title, list }: UnorderedListProps) => {
 	return (
 		<div className="unordered-list-container">
 			<h3>{title}</h3>
 			<ul>
-				{list.map((value, i) => (
-					<ListItem
-						ListItemIndex={i}
-						ListItemValue={value}
-						updateListItem={updateListItem}
-						removeListItem={removeListItem}
-					/>
+				{list.map((value) => (
+					<li>{value}</li>
 				))}
 			</ul>
-			<div className="button-align">
-				<button
-					className="add-button"
-					onClick={() => {
-						addListItem();
-					}}
-				>
-					+
-				</button>
-			</div>
 		</div>
 	);
 };
