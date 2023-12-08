@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import './App.css';
 import UnorderedList from './UnorderedList';
@@ -15,15 +16,11 @@ import {
 	valuePropositions,
 } from './constants';
 import ListEditor from './ListEditor';
-
-const showModal = () => {
-	const dialog = document.getElementById('list-editor') as HTMLDialogElement;
-	dialog && dialog.showModal();
-};
+import Modal from './Modal';
 
 const App = () => {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [canvas, setCanvas] = useState<Canvas>(emptyCanvas);
+	const [editorIsVisible, setEditorIsVisible] = useState(false);
 
 	return (
 		<>
@@ -32,49 +29,67 @@ const App = () => {
 					<UnorderedList
 						title={keyPartners}
 						list={canvas[keyPartners]}
+						openEditor={() => setEditorIsVisible(true)}
 					/>
 					<div className="stack">
 						<UnorderedList
 							title={keyActivities}
 							list={canvas[keyActivities]}
+							openEditor={() => setEditorIsVisible(true)}
 						/>
 						<UnorderedList
 							title={keyResources}
 							list={canvas[keyResources]}
+							openEditor={() => setEditorIsVisible(true)}
 						/>
 					</div>
 					<UnorderedList
 						title={valuePropositions}
 						list={canvas[valuePropositions]}
+						openEditor={() => setEditorIsVisible(true)}
 					/>
 					<div className="stack">
 						<UnorderedList
 							title={customerRelationships}
 							list={canvas[customerRelationships]}
+							openEditor={() => setEditorIsVisible(true)}
 						/>
 						<UnorderedList
 							title={channels}
 							list={canvas[channels]}
+							openEditor={() => setEditorIsVisible(true)}
 						/>
 					</div>
 					<UnorderedList
 						title={customerSegments}
 						list={canvas[customerSegments]}
+						openEditor={() => setEditorIsVisible(true)}
 					/>
 				</div>
 				<div className="row">
 					<UnorderedList
 						title={costStructure}
 						list={canvas[costStructure]}
+						openEditor={() => setEditorIsVisible(true)}
 					/>
 					<UnorderedList
 						title={revenueStreams}
 						list={canvas[revenueStreams]}
+						openEditor={() => setEditorIsVisible(true)}
 					/>
 				</div>
 			</div>
-			<ListEditor />
-			<button onClick={showModal}>PUSH ME</button>
+
+			<Modal
+				isVisible={editorIsVisible}
+				closeModal={() => setEditorIsVisible(false)}
+			>
+				<p>ABC 123</p>
+				<p>TENNESSEE</p>
+				<p>Boat Inc.</p>
+			</Modal>
+
+			<button onClick={() => setEditorIsVisible(true)}>Toggle</button>
 		</>
 	);
 };
