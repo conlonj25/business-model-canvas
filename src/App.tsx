@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import './App.css';
-import UnorderedList from './UnorderedList';
-import { Canvas } from './types';
+import ListView from './ListView';
+import { Canvas, ListTitle } from './types';
 import {
 	channels,
 	costStructure,
@@ -16,80 +15,85 @@ import {
 	valuePropositions,
 } from './constants';
 import ListEditor from './ListEditor';
-import Modal from './Modal';
 
 const App = () => {
 	const [canvas, setCanvas] = useState<Canvas>(emptyCanvas);
 	const [editorIsVisible, setEditorIsVisible] = useState(false);
+	const [editorList, setEditorList] = useState<ListTitle>(keyPartners);
+
+	const closeListEditor = () => setEditorIsVisible(false);
+	const openListEditor = (title: ListTitle) => () => {
+		setEditorList(title);
+		setEditorIsVisible(true);
+	};
 
 	return (
 		<>
 			<div className="stack">
 				<div className="row">
-					<UnorderedList
+					<ListView
 						title={keyPartners}
 						list={canvas[keyPartners]}
-						openEditor={() => setEditorIsVisible(true)}
+						openListEditor={openListEditor(keyPartners)}
 					/>
 					<div className="stack">
-						<UnorderedList
+						<ListView
 							title={keyActivities}
 							list={canvas[keyActivities]}
-							openEditor={() => setEditorIsVisible(true)}
+							openListEditor={openListEditor(keyActivities)}
 						/>
-						<UnorderedList
+						<ListView
 							title={keyResources}
 							list={canvas[keyResources]}
-							openEditor={() => setEditorIsVisible(true)}
+							openListEditor={openListEditor(keyResources)}
 						/>
 					</div>
-					<UnorderedList
+					<ListView
 						title={valuePropositions}
 						list={canvas[valuePropositions]}
-						openEditor={() => setEditorIsVisible(true)}
+						openListEditor={openListEditor(valuePropositions)}
 					/>
 					<div className="stack">
-						<UnorderedList
+						<ListView
 							title={customerRelationships}
 							list={canvas[customerRelationships]}
-							openEditor={() => setEditorIsVisible(true)}
+							openListEditor={openListEditor(
+								customerRelationships
+							)}
 						/>
-						<UnorderedList
+						<ListView
 							title={channels}
 							list={canvas[channels]}
-							openEditor={() => setEditorIsVisible(true)}
+							openListEditor={openListEditor(channels)}
 						/>
 					</div>
-					<UnorderedList
+					<ListView
 						title={customerSegments}
 						list={canvas[customerSegments]}
-						openEditor={() => setEditorIsVisible(true)}
+						openListEditor={openListEditor(customerSegments)}
 					/>
 				</div>
 				<div className="row">
-					<UnorderedList
+					<ListView
 						title={costStructure}
 						list={canvas[costStructure]}
-						openEditor={() => setEditorIsVisible(true)}
+						openListEditor={openListEditor(costStructure)}
 					/>
-					<UnorderedList
+					<ListView
 						title={revenueStreams}
 						list={canvas[revenueStreams]}
-						openEditor={() => setEditorIsVisible(true)}
+						openListEditor={openListEditor(revenueStreams)}
 					/>
 				</div>
 			</div>
 
-			<Modal
+			<ListEditor
 				isVisible={editorIsVisible}
-				closeModal={() => setEditorIsVisible(false)}
-			>
-				<p>ABC 123</p>
-				<p>TENNESSEE</p>
-				<p>Boat Inc.</p>
-			</Modal>
-
-			<button onClick={() => setEditorIsVisible(true)}>Toggle</button>
+				closeListEditor={closeListEditor}
+				title={editorList}
+				canvas={canvas}
+				setCanvas={setCanvas}
+			/>
 		</>
 	);
 };
