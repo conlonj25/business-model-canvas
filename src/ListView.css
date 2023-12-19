@@ -1,7 +1,7 @@
 .list-view-container {
 	flex-grow: 1;
 	background-color: whitesmoke;
-	padding: 1em;
+	padding: 0.25em;
 	margin: 0.25em;
 	border-style: solid;
 	border-radius: 0.5em;
@@ -14,19 +14,4 @@ h3{
 .button-align {
 	display: flex;
 	justify-content: end;
-}
-
-
-.add-button {
-	border: none;
-	border-radius: 50%;
-	box-shadow: 0 2px 4px darkslategray;
-	height: 2em;
-	width: 2em;
-	cursor: pointer;
-	transition: all 0.2s ease;
-}
-
-.add-button:hover {
-	background-color: #A9A9A9;
 }

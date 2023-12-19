@@ -1,5 +1,5 @@
-li {
-	margin: 0.25em 0;
+.list-item {
+	display: flex;
 }
 
 input[type=text] {
@@ -7,12 +7,16 @@ input[type=text] {
 	padding: 0.25em 0;
 	border: none;
 	background-color: transparent;
+	flex-grow: 1;
 }
+
 input[type=text]:focus {
 	padding: 0.25em 0;
 	border: none;
 	outline: none;
 	background-color: transparent;
+	flex-grow: 1;
+	border-style: none none solid none;
 }
 
 .remove-button {
@@ -27,6 +31,11 @@ input[type=text]:focus {
 }
 
 .remove-button:hover {
+	color: black;
+	background-color: #A9A9A9;
+}
+
+input[type=text]:focus + .remove-button {
 	color: black;
 	background-color: #A9A9A9;
 }
