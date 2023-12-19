@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Canvas, ListTitle } from './types';
 import ListItem from './ListItem';
+import './ListEditor.css';
 
 type ListEditorProps = {
 	isVisible: boolean;
@@ -49,7 +50,9 @@ const ListEditor = ({
 	return (
 		<dialog ref={ref} onCancel={closeListEditor}>
 			<div className="button-align">
-				<button onClick={closeListEditor}>X</button>
+				<button className="close-button" onClick={closeListEditor}>
+					X
+				</button>
 			</div>
 			<h1>{title}</h1>
 			<ul>

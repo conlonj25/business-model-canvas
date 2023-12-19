@@ -15,21 +15,23 @@ const ListItem = ({
 }: ListItemProps) => {
 	return (
 		<li>
-			<input
-				type="text"
-				value={ListItemValue}
-				onChange={(e) => {
-					updateListItem(ListItemIndex, e.target.value);
-				}}
-			></input>
-			<button
-				className="remove-button"
-				onClick={() => {
-					removeListItem(ListItemIndex);
-				}}
-			>
-				X
-			</button>
+			<div className="list-item">
+				<input
+					type="text"
+					value={ListItemValue}
+					onChange={(e) => {
+						updateListItem(ListItemIndex, e.target.value);
+					}}
+				></input>
+				<button
+					className="remove-button"
+					onClick={() => {
+						removeListItem(ListItemIndex);
+					}}
+				>
+					X
+				</button>
+			</div>
 		</li>
 	);
 };
