@@ -15,9 +15,12 @@ import {
 	valuePropositions,
 } from './constants';
 import ListEditor from './ListEditor';
+import useLocalStorageState from 'use-local-storage-state';
 
 const App = () => {
-	const [canvas, setCanvas] = useState<Canvas>(emptyCanvas);
+	const [canvas, setCanvas] = useLocalStorageState('business-model-canvas', {
+		defaultValue: emptyCanvas as Canvas,
+	});
 	const [editorIsVisible, setEditorIsVisible] = useState(false);
 	const [editorList, setEditorList] = useState<ListTitle>(keyPartners);
 
