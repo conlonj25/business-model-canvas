@@ -5,28 +5,28 @@ dialog {
 	border-radius: 0.5em;
 }
 
-.button-align {
+h1 {
+	margin: 0;
+}
+
+.title-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.button-align-end {
 	display: flex;
 	justify-content: end;
 }
 
-.close-button {
-	border: none;
+.button {
 	cursor: pointer;
-	background-color: transparent;
-	font-size: larger;
-}
-
-.add-button {
-	border: none;
+	width: 1.8em;
+	height: 1.8em;
 	border-radius: 50%;
-	box-shadow: 0 2px 4px darkslategray;
-	height: 2em;
-	width: 2em;
-	cursor: pointer;
-	transition: all 0.2s ease;
 }
 
-.add-button:hover {
+.button:hover {
 	background-color: #A9A9A9;
 }
