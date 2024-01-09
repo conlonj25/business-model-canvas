@@ -8,7 +8,7 @@
 
 -   [ ] listItems wrap text
 -   [x] list animates on hover
--   [ ] list has minimum height
+-   [x] list has minimum height
 -   [ ] do x button properly
 -   [ ] do + button properly
 -   [ ] list item underline on hover
