@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Canvas, ListTitle } from './types';
 import ListItem from './ListItem';
 import './ListEditor.css';
-import { MdClose, MdOutlineAdd } from 'react-icons/md';
+import { MdAdd, MdClose } from 'react-icons/md';
 
 type ListEditorProps = {
 	isVisible: boolean;
@@ -52,7 +52,7 @@ const ListEditor = ({
 		<dialog ref={ref} onCancel={closeListEditor}>
 			<div className="title-container">
 				<h1>{title}</h1>
-				<MdClose className="button" onClick={closeListEditor} />
+				<MdClose className="close-button" onClick={closeListEditor} />
 			</div>
 			<ul>
 				{list.map((value, i) => (
@@ -66,7 +66,7 @@ const ListEditor = ({
 			</ul>
 			<br />
 			<div className="button-align-end">
-				<MdOutlineAdd className="button" onClick={addListItem} />
+				<MdAdd className="add-button" onClick={addListItem} />
 			</div>
 		</dialog>
 	);

@@ -1,5 +1,6 @@
 .list-item {
 	display: flex;
+	margin-bottom: 0.25em;
 }
 
 input[type=text] {
@@ -19,23 +20,20 @@ input[type=text]:focus {
 	border-style: none none solid none;
 }
 
+/* input[type=text]:focus + .remove-button {
+	color: black;
+	background-color: #A9A9A9;
+} */
+
 .remove-button {
-	border: none;
-	background-color: transparent;
-	height: 2em;
-	width: 2em;
-	border-radius: 50%;
-	color: transparent;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	width: 1em;
+	height: 1em;
+	stroke: transparent;
+	transition: all 0.5s ease;
 }
 
 .remove-button:hover {
-	color: black;
-	background-color: #A9A9A9;
-}
-
-input[type=text]:focus + .remove-button {
-	color: black;
-	background-color: #A9A9A9;
+	stroke: black;
+	transform: scale(1.2);
 }

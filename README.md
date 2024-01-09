@@ -7,10 +7,5 @@
 ## Styling TODO
 
 -   [ ] listItems wrap text
--   [x] list animates on hover
--   [x] list has minimum height
--   [ ] do x button properly
--   [ ] do + button properly
--   [ ] list item underline on hover
--   [ ] do list item x button properly
--   [ ] tab between list items only
+-   [ ] underline the whole thing when a list item is hovered
+-   [ ] change the font of the entire website
