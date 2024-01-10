@@ -1,7 +1,7 @@
 ## TODO
 
--   [ ] Fix favicon and site title and stuff
--   [ ] Add icons to list titles
+-   [x] Fix favicon and site title and stuff
+-   [x] Add icons to list titles
 -   [ ] Return key inserts new item
 
 ## Styling TODO

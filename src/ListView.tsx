@@ -1,4 +1,5 @@
 import './ListView.css';
+import { ListIcons } from './constants';
 import { List, ListTitle } from './types';
 
 type ListViewProps = {
@@ -10,7 +11,10 @@ type ListViewProps = {
 const ListView = ({ title, list, openListEditor }: ListViewProps) => {
 	return (
 		<div onClick={openListEditor} className="list-view-container">
-			<h3>{title}</h3>
+			<div className="title-icon-container">
+				<h3>{title}</h3>
+				{ListIcons[title]({ className: 'list-icon' })}
+			</div>
 			<ul>
 				{list.map((value) => (
 					<li>{value}</li>
