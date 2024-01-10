@@ -7,5 +7,5 @@
 ## Styling TODO
 
 -   [ ] listItems wrap text
--   [ ] underline the whole thing when a list item is hovered
+-   [x] underline the whole thing when a list item is hovered
 -   [ ] change the font of the entire website
