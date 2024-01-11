@@ -1,6 +1,16 @@
 .list-item {
 	display: flex;
+	align-items: center;
 	margin-bottom: 0.25em;
+}
+
+.list-item input:hover {
+	border-style: none none solid none;
+}
+
+.list-item :hover + .remove-button {
+	stroke: black;
+	transform: scale(1.2);
 }
 
 input[type=text] {
@@ -12,18 +22,10 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-	padding: 0.25em 0;
 	border: none;
 	outline: none;
-	background-color: transparent;
-	flex-grow: 1;
 	border-style: none none solid none;
 }
-
-/* input[type=text]:focus + .remove-button {
-	color: black;
-	background-color: #A9A9A9;
-} */
 
 .remove-button {
 	cursor: pointer;
