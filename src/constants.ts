@@ -11,7 +11,7 @@ export const revenueStreams = 'Revenue Streams';
 export const emptyCanvas = {
 	[keyPartners]: [],
 	[keyActivities]: [],
-	[keyResources]: ['fdasfdf', 'fsadfadsfsad', 'asfdafsf'],
+	[keyResources]: [],
 	[valuePropositions]: [],
 	[customerRelationships]: [],
 	[channels]: [],

@@ -5,6 +5,12 @@
 	margin: 0.25em;
 	border-style: solid;
 	border-radius: 0.5em;
+	transition: all .2s ease-in-out;
+	min-height: 10em;
+}
+
+.list-view-container:hover {
+	transform: scale(1.01);
 }
 
 h3{

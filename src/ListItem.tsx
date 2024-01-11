@@ -1,3 +1,4 @@
+import { FiTrash2 } from 'react-icons/fi';
 import './ListItem.css';
 
 type ListItemProps = {
@@ -23,14 +24,12 @@ const ListItem = ({
 						updateListItem(ListItemIndex, e.target.value);
 					}}
 				></input>
-				<button
+				<FiTrash2
 					className="remove-button"
 					onClick={() => {
 						removeListItem(ListItemIndex);
 					}}
-				>
-					X
-				</button>
+				/>
 			</div>
 		</li>
 	);
