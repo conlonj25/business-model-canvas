@@ -1,11 +1,13 @@
-## TODO
+# Business Model Canvas
 
--   [x] Fix favicon and site title and stuff
--   [x] Add icons to list titles
--   [ ] Return key inserts new item
+![Business Model Canvas](./public/screenshot.gif)
 
-## Styling TODO
+A [Business Model Canvas](https://en.wikipedia.org/wiki/Business_Model_Canvas) is a visual diagram whose purpose is to represent an entire business plan on a single page. They are especially popular with startups who need to rapidly reiterate their ideas.
 
--   [ ] listItems wrap text
--   [x] underline the whole thing when a list item is hovered
--   [ ] change the font of the entire website
+I had to create one of these for a business module and I was stumped to find that there wasn't a single decent tool available for this purpose (powerpoint/excel sheets are not decent tools). So I made it myself.
+
+## Tooling
+
+This is a simple SPA using React and Vite as a build tool. Everything is written in pure beautiful Typescript.
+
+Styling is all done in raw css. Sure, it might look better with a CSS framework, but that's not the point! It's plain but intentionally so. No-frills, black-and-white: perfect for printing! Or just inserting into a bland word document.
